@@ -3,7 +3,11 @@
 sudo apt install ros-melodic-gazebo-ros ros-melodic-gazebo-plugins
 cd ~/catkin_ws/src
 both="0"
-
+sudo apt-get install libgeographic-dev
+sudo apt-get install geographiclib-tools
+sudo apt-get install ros-melodic-geographic-msgs
+cd ~/catkin_ws/src/mavros/mavros/scripts
+sudo ./install_geographiclib_datasets.sh
 echo " Would you like Mission 8 or Mission 7 packages or Neither [7/8/both,None]"
 read Package
 if [ $Package == 'both' ]
@@ -21,10 +25,11 @@ then
 	if [ ! -d ~/catkin_ws/src/Gazebo-Ros ]
 	then
 		echo "Do you want to install Gazebo-Ros?[y/n]"
-		read input	
+		read input	 
 	
 		if [ $input == "y" ]
 		then
+			cd ~/catkin_ws/src
 		git clone https://github.com/Texas-Aerial-Robotics/Gazebo-Ros.git
 		fi
 	fi
@@ -35,6 +40,7 @@ then
 		
 		if [ $input == "y" ]
 		then
+			cd ~
 		git clone https://github.com/Texas-Aerial-Robotics/Computations.git
 		fi
 	fi
@@ -60,7 +66,7 @@ then
 		git clone https://github.com/Texas-Aerial-Robotics/darknet_ros.git
 		fi
 	fi
-	if [ ! -d ~/catkin_ws/src/Transformations ]
+	if [ ! -d ~/catkin_ws/src/Transformations-Ros ]
 	then
 		echo "Do you want to install the Transformations package?[y/n]"
 		read input	
@@ -68,7 +74,7 @@ then
 		if [ $input == "y" ]
 		then
 		cd ~/catkin_ws/src
-		git clone https://github.com/Texas-Aerial-Robotics/Transformations.git
+		git clone https://github.com/Texas-Aerial-Robotics/Transformations-Ros.git
 		fi
 	fi
 	if [ ! -d ~/catkin_ws/src/camera_signalman ]
@@ -82,7 +88,7 @@ then
 		git clone https://github.com/Texas-Aerial-Robotics/camera_signalman.git
 		fi
 	fi
-	if [ ! -d ~/catkin_ws/src/roomba_controls]
+	if [ ! -d ~/catkin_ws/src/roomba_controls ]
 	then
 		echo "Do you want to install the rooma_controls package ?[y/n]"
 		read input	
@@ -178,7 +184,7 @@ then
 		git clone https://github.com/Texas-Aerial-Robotics/actorcontrol_gazebo.git
 		fi
 	fi
-	if [ ! -d ~/catkin_ws/src/Mission_OutofControls ]
+	if [ ! -d ~/catkin_ws/src/Mission8_OutOfControls ]
 	then
 		echo "Do you want to install the Mission_OutofControls packages ?[y/n]"
 		read input	
@@ -186,7 +192,7 @@ then
 		if [ $input == "y" ]
 		then
 		cd ~/catkin_ws/src
-		git clone https://github.com/Texas-Aerial-Robotics/Mission_OutofControls.git
+		git clone https://github.com/Texas-Aerial-Robotics/Mission8_OutOfControls.git
 		fi
 	fi
 	if [ ! -d ~/ORB_SLAM2 ]
