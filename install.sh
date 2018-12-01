@@ -1,6 +1,6 @@
 #!/bin/bash
 
-chmod +x ./installs/instrosinstall.sh
+chmod +x ./installs/rosinstall.sh
 
 chmod +x ./installs/catkininstall.sh
 
@@ -16,8 +16,13 @@ chmod +x ./installs/simve_setup.sh
 
 chmod +x ./installs/RDS.sh
 
-./installs/rosinstall.sh
+echo "ROSINSTALL[Y/N]"
+read ros
 
+if [ $ros == "Y" ]
+then
+./installs/rosinstall.sh
+fi
 ./installs/catkininstall.sh
 
 ./installs/gazinst.sh

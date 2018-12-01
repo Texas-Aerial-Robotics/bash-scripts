@@ -1,12 +1,17 @@
 #!/bin/bash
 
-
-cd ~/catkin_ws/
+GAZROS=~/catkin_ws/src/Gazebo-Ros/launch/
 
 LAUNCH=$1
 
-if [ -e $LAUNCH ]
+GAZROS=$GAZROS$LAUNCH
+
+if [ -e $GAZROS ]
 then	
+	echo "Terminal One:"
+	echo "yoke"
+	gnome-terminal --tab --command="roslaunch gazebo_ros_sim $LAUNCH"
+
 	echo "Do you want to add camera view[Y/N]"
 
 	read camera
