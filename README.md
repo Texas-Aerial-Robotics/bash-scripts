@@ -16,4 +16,5 @@ So you decide to join TAR and want to work on things ASAP.
 You probably had a headache getting Ubuntu installed and don't want to struggle to install everything.
 
 **Step One **
+
 ***Cloning the Repository***
