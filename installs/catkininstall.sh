@@ -14,9 +14,11 @@ cd ~/catkin_ws
 
 wstool init ~/catkin_ws/src
 
-rosinstall_generator --upstream mavros | tee /tmp/mavros.rosinstall
+ROS_DISTRO=melodic
 
-rosinstall_generator mavlink | tee -a /tmp/mavros.rosinstall
+rosinstall_generator --upstream --rosdistro $ROS_DISTRO mavros | tee /tmp/mavros.rosinstall
+
+rosinstall_generator --rosdistro $ROS_DISTRO mavlink | tee -a /tmp/mavros.rosinstall
 
 wstool merge -t src /tmp/mavros.rosinstall
 
