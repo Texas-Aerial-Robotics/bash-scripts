@@ -82,7 +82,7 @@ then
 		git clone https://github.com/Texas-Aerial-Robotics/camera_signalman.git
 		fi
 	fi
-	if [ ! -d ~/catkin_ws/src/roomba_controls]
+	if [ ! -d ~/catkin_ws/src/roomba_controls ]
 	then
 		echo "Do you want to install the rooma_controls package ?[y/n]"
 		read input	
