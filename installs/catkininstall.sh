@@ -2,7 +2,7 @@
 
 echo " INSTALL DEPENDENCIES/CATKIN"
 
-sudo apt-get install python-catkin-tools
+sudo apt-get install python-catkin-tools -y
 
 mkdir -p ~/catkin_ws/src
 

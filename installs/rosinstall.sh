@@ -27,7 +27,7 @@ echo " INSTALL"
 
 echo "-----------------"
 
-sudo apt-get install ros-melodic-desktop-full
+sudo apt-get install ros-melodic-desktop-full -y
 
 echo "INITIALIZE"
 
@@ -41,4 +41,4 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 echo " DEPENDENCIES "
 
-sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential
+sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential -y

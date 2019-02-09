@@ -1,11 +1,11 @@
 #!/bin/bash
 
-sudo apt install ros-melodic-gazebo-ros ros-melodic-gazebo-plugins
+sudo apt install ros-melodic-gazebo-ros ros-melodic-gazebo-plugins -y
 cd ~/catkin_ws/src
 both="0"
-sudo apt-get install libgeographic-dev
-sudo apt-get install geographiclib-tools
-sudo apt-get install ros-melodic-geographic-msgs
+sudo apt-get install libgeographic-dev -y
+sudo apt-get install geographiclib-tools -y
+sudo apt-get install ros-melodic-geographic-msgs -y
 cd ~/catkin_ws/src/mavros/mavros/scripts
 sudo ./install_geographiclib_datasets.sh
 echo " Would you like Mission 8 or Mission 7 packages or Neither [7/8/both,None]"
@@ -165,8 +165,8 @@ then
 	if [ ! -d ~/catkin_ws/src/mission8_sim ]
 	then
 		echo "Do you want to install the mission8_sim packages?[y/n]"
-		read input	
-	
+		read input
+		sudo apt-get install libglfw3 libglfw3-dev libglew-dev -y
 		if [ $input == "y" ]
 		then
 		git clone https://github.com/Texas-Aerial-Robotics/mission8_sim.git
@@ -261,6 +261,6 @@ cd ~/catkin_ws/
 catkin build
 source ~/.bashrc
 
-sudo apt install ros-melodic-image-view
+sudo apt install ros-melodic-image-view -y
 
 
