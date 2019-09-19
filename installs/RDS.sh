@@ -1,11 +1,11 @@
 #!/bin/bash
 
-sudo apt install ros-melodic-gazebo-ros ros-melodic-gazebo-plugins -y
+yes |sudo apt install ros-melodic-gazebo-ros ros-melodic-gazebo-plugins
 cd ~/catkin_ws/src
 both="0"
-sudo apt-get install libgeographic-dev -y
-sudo apt-get install geographiclib-tools -y
-sudo apt-get install ros-melodic-geographic-msgs -y
+yes |sudo apt-get install libgeographic-dev
+yes |sudo apt-get install geographiclib-tools
+yes |sudo apt-get install ros-melodic-geographic-msgs
 cd ~/catkin_ws/src/mavros/mavros/scripts
 sudo ./install_geographiclib_datasets.sh
 echo " Would you like Mission 8 or Mission 7 packages or Neither [7/8/both,None]"
@@ -261,6 +261,6 @@ cd ~/catkin_ws/
 catkin build
 source ~/.bashrc
 
-sudo apt install ros-melodic-image-view -y
+yes |sudo apt install ros-melodic-image-view
 
 
