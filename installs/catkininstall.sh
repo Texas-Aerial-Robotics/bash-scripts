@@ -2,7 +2,7 @@
 
 echo " INSTALL DEPENDENCIES/CATKIN"
 
-sudo apt-get install python-catkin-tools -y
+yes |sudo apt-get install python-catkin-tools
 
 mkdir -p ~/catkin_ws/src
 
@@ -24,7 +24,7 @@ wstool merge -t src /tmp/mavros.rosinstall
 
 wstool update -t src
 
-rosdep install --from-paths src --ignore-src --rosdistro `echo $ROS_DISTRO` -y
+yes |rosdep install --from-paths src --ignore-src --rosdistro `echo $ROS_DISTRO` -y
 
 catkin build
 
