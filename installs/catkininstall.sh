@@ -24,7 +24,7 @@ wstool merge -t src /tmp/mavros.rosinstall
 
 wstool update -t src
 
-yes |rosdep install --from-paths src --ignore-src --rosdistro `echo $ROS_DISTRO` -y
+yes |rosdep install --from-paths src --ignore-src --rosdistro `echo $ROS_DISTRO`
 
 catkin build
 
